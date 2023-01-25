@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewEnrollController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::controller(NewEnrollController::class)->group(function () {
+    Route::resource('enrolls',NewEnrollController::class);
+    Route::get('inscription', "inscriptionFunc")->name('newEnroll.form');
+
+});
+

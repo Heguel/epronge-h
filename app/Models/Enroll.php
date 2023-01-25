@@ -24,6 +24,20 @@ class Enroll extends Model
     ];
 
     /**
+     * The "booting" method of the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($enroll) {
+            $enroll->code = substr($enroll->firstname, 0, 1) . substr($enroll->lastname, 0, 1);
+        });
+    }
+
+    /**
      * Get the option that owns the Enroll
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

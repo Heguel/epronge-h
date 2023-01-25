@@ -30,7 +30,6 @@ class OptionResource extends Resource
                 Card::make()->schema([
                     TextInput::make('name')->required(),
                     TextInput::make('description')->nullable(),
-
                 ])
             ]);
     }
@@ -41,7 +40,7 @@ class OptionResource extends Resource
             ->columns([
                 //
                 TextColumn::make('id')->sortable(),
-                TextColumn::make('name')->sortable(),
+                TextColumn::make('name')->searchable()->sortable(),
                 TextColumn::make('description'),
             ])
             ->filters([

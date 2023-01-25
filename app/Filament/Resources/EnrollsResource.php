@@ -57,14 +57,13 @@ class EnrollsResource extends Resource
             ->columns([
                 //
                 TextColumn::make('id')->sortable(),
-                TextColumn::make('lastname')->sortable(),
-                TextColumn::make('firstname')->sortable(),
-                TextColumn::make('email')->sortable(),
-                TextColumn::make('gender')->sortable(),
-                TextColumn::make('phone')->sortable(),
-                TextColumn::make('Date de naissance')->sortable(),
-                TextColumn::make('Option')->sortable(),
-                TextColumn::make('Date de creation')->sortable(),
+                TextColumn::make('lastname')->searchable()->sortable(),
+                TextColumn::make('firstname')->searchable()->sortable(),
+                TextColumn::make('email')->searchable()->sortable(),
+                TextColumn::make('gender')->searchable(),
+                TextColumn::make('phone')->searchable()->sortable(),
+                TextColumn::make('date_of_birth')->searchable()->sortable(),
+                TextColumn::make('option.name')->searchable()->sortable(),
             ])
             ->filters([
                 //
@@ -88,7 +87,7 @@ class EnrollsResource extends Resource
     {
         return [
             'index' => Pages\ListEnrolls::route('/'),
-            'create' => Pages\CreateEnrolls::route('/create'),
+            // 'create' => Pages\CreateEnrolls::route('/create'),
             'edit' => Pages\EditEnrolls::route('/{record}/edit'),
         ];
     }
