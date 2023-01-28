@@ -19,8 +19,6 @@ Route::get('/', function () {
 });
 
 Route::controller(NewEnrollController::class)->group(function () {
-    Route::resource('enrolls',NewEnrollController::class);
+    Route::resource('enrolls', NewEnrollController::class);
     Route::get('inscription', "inscriptionFunc")->name('newEnroll.form');
-
 });
-

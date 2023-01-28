@@ -9,28 +9,34 @@ use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
+use Filament\Tables\Filters\Filter;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
-use Illuminate\Database\Eloquent\Builder;
+use Filament\Tables\Filters\SelectFilter;
 use App\Filament\Resources\EnrollsResource\Pages;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\EnrollsResource\RelationManagers;
+use App\Filament\Resources\DashboardResource\Widgets\DasboardStatsOverview;
 
 class EnrollsResource extends Resource
 {
     protected static ?string $model = Enrolls::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $recordTitleAttribute = 'lastname';
 
+    
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 //
                 Card::make()->schema([
-                    TextInput::make('code')->required(),
+                    TextInput::make('code')->required()->placeholder('AB-000000'),
                     TextInput::make('lastname')->required(),
                     TextInput::make('firstname')->required(),
                     TextInput::make('email')->email()->required(),
@@ -56,20 +62,25 @@ class EnrollsResource extends Resource
         return $table
             ->columns([
                 //
-                TextColumn::make('id')->sortable(),
-                TextColumn::make('lastname')->searchable()->sortable(),
-                TextColumn::make('firstname')->searchable()->sortable(),
+                TextColumn::make('lastname')->searchable()->sortable()->label('Nom'),
+                TextColumn::make('firstname')->searchable()->sortable()->label('Prénom'),
                 TextColumn::make('email')->searchable()->sortable(),
-                TextColumn::make('gender')->searchable(),
-                TextColumn::make('phone')->searchable()->sortable(),
-                TextColumn::make('date_of_birth')->searchable()->sortable(),
+                TextColumn::make('gender')->searchable()->label("Sexe"),
+                TextColumn::make('phone')->searchable()->sortable()->label("Numéro de téléphone"),
+                TextColumn::make('date_of_birth')->searchable()->sortable()->dateTime('j M Y')->label("Date de naissance"),
                 TextColumn::make('option.name')->searchable()->sortable(),
+                TextColumn::make('created_at')->searchable()->dateTime('j M Y')->label('Date inscription'),
             ])
             ->filters([
                 //
+                // Filter::make('Date')
+                // ->query(fn (Builder $query): Builder => $query->where('created_at', true)),
+                SelectFilter::make('Option')->relationship('option', 'name'),
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -89,6 +100,13 @@ class EnrollsResource extends Resource
             'index' => Pages\ListEnrolls::route('/'),
             // 'create' => Pages\CreateEnrolls::route('/create'),
             'edit' => Pages\EditEnrolls::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            DasboardStatsOverview::class,
         ];
     }
 }

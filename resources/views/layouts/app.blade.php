@@ -6,28 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>
         @yield('title') | Epronge-h
     </title>
+
     @vite('resources/css/app.css')
     @yield('links')
 </head>
 
-<body>
+<body class="">
 
 
-    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-        <div class="container flex flex-wrap items-center justify-between mx-auto">
+    <nav class="rounded border-gray-200 bg-white px-2 py-2.5 dark:bg-gray-900 sm:px-4">
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
             <a href="{{ url('') }}" class="flex items-center">
-                <img src="{{ asset('assets/brand/epronge_logo.png') }}" class="h-6 mr-3 sm:h-9" alt="Epronge Logo" />
-                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Epronge-h</span>
+                <img src="{{ asset('assets/brand/epronge_logo.png') }}" class="mr-3 h-6 sm:h-9" alt="Epronge Logo" />
+                <span
+                    class="self-center whitespace-nowrap text-xl font-semibold text-orange-500 dark:text-white">Epronge-h</span>
             </a>
 
             <button data-collapse-toggle="navbar-default" type="button"
-                class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                class="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
                 aria-controls="navbar-default" aria-expanded="false">
                 <span class="sr-only">Ouvrir le menu</span>
-                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
                         d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
@@ -38,18 +41,22 @@
 
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul
-                    class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium md:dark:bg-gray-900">
+                    {{-- @if (Route::is('')) --}}
                     <li>
                         <a href="{{ url('/') }}"
-                            class="block py-2 pl-3 pr-4 text-gray-700 bg-white-700 rounded md:bg-transparent md:text-white-700 md:p-0 dark:text-white"
+                            class="bg-white-700 md:text-white-700 block rounded py-2 pl-3 pr-4 text-gray-700 transition duration-300 ease-in-out hover:text-orange-400 dark:text-white md:bg-transparent md:p-0"
                             aria-current="page">Accueil</a>
                     </li>
-                    <li>
-                        <a href="{{ route('newEnroll.form') }}"
-                            class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                            Inscription
-                        </a>
-                    </li>
+                    {{-- @endif --}}
+                    @if (!Route::is('newEnroll.form'))
+                        <li>
+                            <a href="{{ route('newEnroll.form') }}"
+                                class="block rounded py-2 pl-3 pr-4 text-gray-700 transition duration-300 ease-in-out hover:bg-gray-100 hover:text-orange-400 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:dark:hover:bg-transparent md:dark:hover:text-white">
+                                Inscription
+                            </a>
+                        </li>
+                    @endif
 
                 </ul>
             </div>
@@ -60,26 +67,42 @@
 
 
 
-    <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="{{ url('/') }}" class="flex items-center mb-4 sm:mb-0">
-                <img src="{{ asset('assets/brand/epronge_logo.png') }}" class="h-8 mr-3" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Epronge-H</span>
-            </a>
-            <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
-                <li>
-                    <a href="{{ url('/') }}" class="mr-4 hover:underline md:mr-6 ">Accueil</a>
-                </li>
-                <li>
-                    <a href="{{ route('newEnroll.form') }}" class="mr-4 hover:underline md:mr-6">Inscription</a>
-                </li>
+    <footer
+        class="flex items-center justify-between rounded-lg bg-white p-4 shadow dark:bg-gray-900 sm:flex-col sm:justify-evenly md:px-6 md:py-8 transition-transform duration-300 ease-in-out">
 
-            </ul>
+
+        <div class="w-full">
+            <div class="container mx-auto flex flex-col flex-wrap py-4 px-5 sm:flex-row">
+                <p class="text-center text-sm text-gray-500 sm:text-left">
+                    ©{{ '2023' }}
+                    <a href="#" class="hover:underline">{{ 'Epronge-H' }}</a> - Tous droits reservés.
+                </p>
+
+                <span class="mt-2 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
+                    <a class="text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
+                        href="facebook.com">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
+                        href="wa.me/50922222222">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
+                        href="instagram.com">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
+                        href="telegram.com">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                </span>
+            </div>
+            <hr>
+            <p class=" py-4 text-center text-base text-gray-500">
+                Powered by <a href="https://haitiandevelopers.com/" target="_BLANK" class="text-orange-400">HD</a>
+            </p>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">©{{"2023"}} <a href="https://flowbite.com/"
-                class="hover:underline">{{"Epronge-H"}}</a>. Tous droits reserves.
-        </span>
     </footer>
 
 

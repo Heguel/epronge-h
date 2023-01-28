@@ -19,6 +19,7 @@ use App\Filament\Resources\OptionResource\RelationManagers;
 class OptionResource extends Resource
 {
     protected static ?string $model = Option::class;
+    protected static ?string $recordTitleAttribute = 'name';
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -42,12 +43,15 @@ class OptionResource extends Resource
                 TextColumn::make('id')->sortable(),
                 TextColumn::make('name')->searchable()->sortable(),
                 TextColumn::make('description'),
+                TextColumn::make('created_at')->searchable()
+                    ->datetime('j M Y')->label("Date créée"),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -65,8 +69,8 @@ class OptionResource extends Resource
     {
         return [
             'index' => Pages\ListOptions::route('/'),
-            'create' => Pages\CreateOption::route('/create'),
-            'edit' => Pages\EditOption::route('/{record}/edit'),
+            // 'create' => Pages\CreateOption::route('/create'),
+            // 'edit' => Pages\EditOption::route('/{record}/edit'),
         ];
     }
 }
