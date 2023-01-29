@@ -10,7 +10,7 @@
 
     {{-- start carouseel --}}
     <!-- component -->
-    <section class="bg-white pt-24 transition-transform duration-300 ease-in-out hover:scale-150">
+    <section class="bg-white pt-24 ">
         <div class="mx-auto max-w-7xl px-12">
             <div class="mx-auto w-full text-left md:w-11/12 md:text-center xl:w-9/12">
                 <h1
@@ -29,7 +29,7 @@
                 </p>
                 <div class="mb-4 space-x-0 md:mb-8 md:space-x-2">
                     <a href="{{ route('newEnroll.form') }}"
-                        class="mb-2 inline-flex w-full items-center justify-center rounded-2xl bg-orange-400 px-6 py-3 text-lg text-white sm:mb-0 sm:w-auto">
+                        class="mb-2 inline-flex w-full items-center justify-center rounded-2xl bg-orange-400 px-6 py-3 text-lg text-white sm:mb-0 sm:w-auto transition-transform duration-300 ease-in-out hover:shadow-xl">
                         Inscrivez-vous
                         <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                             fill="currentColor">
@@ -39,7 +39,7 @@
                         </svg>
                     </a>
                     <a href="#seeMore"
-                        class="mb-2 inline-flex w-full items-center justify-center rounded-2xl bg-red-200 px-6 py-3 text-lg sm:mb-0 sm:w-auto">
+                        class="mb-2 inline-flex w-full items-center justify-center rounded-2xl bg-red-200 px-6 py-3 text-lg sm:mb-0 sm:w-auto transition-transform duration-300 ease-in-out hover:shadow-xl">
                         Voir plus
                         <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -71,11 +71,11 @@
 
     {{-- info --}}
     <section id="seeMore"
-        class="hover:scale-120 relative my-16 bg-orange-100 py-16 transition-transform duration-300 ease-in-out">
+        class="relative my-16 bg-orange-100 py-16">
         <div class="container mx-auto">
             <div class="flex flex-wrap items-center">
                 <div class="-mt-78 mr-auto ml-auto w-10/12 px-12 md:w-6/12 md:px-4 lg:w-4/12">
-                    <div class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-orange-500 shadow-lg">
+                    <div class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-orange-500 shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
                         <img alt="..." src="{{ asset('assets/img/graduation3.jpg') }}"
                             class="w-full rounded-t-lg align-middle">
                         <blockquote class="relative mb-4 p-8">
@@ -96,7 +96,7 @@
                 </div>
 
                 <div class="w-full px-4 md:w-6/12">
-                    <h3 class="text-center text-3xl font-semibold" style="color: rgb(237,10,118);">Options disponibles</h3>
+                    <h3 class="text-center text-3xl font-semibold " style="color: rgb(237,10,118);">Options disponibles</h3>
                     <div class="flex flex-wrap">
                         <div class="w-full px-4 md:w-6/12">
 
