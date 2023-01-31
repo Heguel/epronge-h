@@ -24,8 +24,7 @@
                         ?</span>
                 </h1>
                 <p class="mb-8 px-0 text-lg text-gray-600 md:text-xl lg:px-24">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam suscipit, tenetur a eius nisi enim
-                    debitis
+                    <span class="font-bold">Epronge-H, c’est la meilleure référence dans la cité en matière de formation professionnelle de qualité. <span>
                 </p>
                 <div class="mb-4 space-x-0 md:mb-8 md:space-x-2">
                     <a href="{{ route('newEnroll.form') }}"
@@ -87,9 +86,10 @@
                                 Mieux former pour être utile
                             </h4>
                             <p class="text-md mt-2 font-light text-white">
-                                Pour toutes informations supplémentaires, passez nous voir au
-                                <span class="font-bold"> de l'institut Drop Of Love (IDOL)</span><br>
-                                Ou contactez-nous par WhatsApp au numéro : <span class="font-bold"> (+509) 3775-2935</span>
+                                Pour toutes informations supplémentaires, passez nous voir à
+                                <span class="font-bold"> de l'institut Drop Of Love (IDOL) du Limbé, Malor, Limbé, Haiti</span><br>
+                                Ou contactez-nous par WhatsApp au numéro : <span class="font-bold"> (+509) 3775-2935</span> Ou pour appel
+                                direct composer le numero suivant: <span class="font-bold"> (+509) 3427-2493</span>
                             </p>
                         </blockquote>
                     </div>
@@ -104,11 +104,12 @@
                                 <div class="flex-auto px-4 py-5">
                                     <div
                                         class="text-blueGray-500 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
-                                        <i class="fas fa-sitemap"></i>
+                                        <i class="fas fa-laptop"></i>
                                     </div>
                                     <h6 class="mb-1 text-xl font-semibold">Informatique bureautique</h6>
                                     <p class="text-blueGray-500 mb-4">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia omnis eos placeat.
+                                        La bureautique joue un rôle prépondérant pour la bonne marche d'une entreprise. 
+                                        Elle permet d'assurer les échanges à l'intérieur comme à l'extérieur de l'entreprise.
                                     </p>
                                 </div>
                             </div>
@@ -116,13 +117,14 @@
                                 <div class="flex-auto px-4 py-5">
                                     <div
                                         class="text-blueGray-500 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
-                                        <i class="fas fa-drafting-compass"></i>
+                                        <i class="fas fa-hamburger"></i>
                                     </div>
                                     <h6 class="mb-1 text-xl font-semibold">
-                                        Feature 3
+                                        Cuisine et Pâtisserie
                                     </h6>
                                     <p class="text-blueGray-500 mb-4">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia omnis eos placeat.
+                                        Un pâtissier est un professionnel qui confectionne et vend au détail sa production de gâteaux, 
+                                        de préparations culinaires à base de pâte garnie et cuites au four, mais aussi de viennoiseries, glaces, chocolats et confiseries.
                                     </p>
                                 </div>
                             </div>
@@ -132,12 +134,12 @@
                                 <div class="flex-auto px-4 py-5">
                                     <div
                                         class="text-blueGray-500 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
-                                        <i class="fas fa-newspaper"></i>
+                                        <i class="fas fa-hammer"></i>
                                     </div>
                                     <h6 class="mb-1 text-xl font-semibold">Carellage</h6>
                                     <p class="text-blueGray-500 mb-4">
-                                        This extension also comes with 3 sample pages. They are
-                                        fully coded so you can.
+                                        Un carrelage est couramment utilisé pour la finition et la décoration 
+                                        des sols et des murs pour les habitations et autres locaux, aussi bien à l'intérieur qu'en extérieur.
                                     </p>
                                 </div>
                             </div>
@@ -145,11 +147,12 @@
                                 <div class="flex-auto px-4 py-5">
                                     <div
                                         class="text-blueGray-500 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
-                                        <i class="fas fa-file-alt"></i>
+                                        <i class="fas fa-toolbox"></i>
                                     </div>
-                                    <h6 class="mb-1 text-xl font-semibold">Feature 4</h6>
+                                    <h6 class="mb-1 text-xl font-semibold">Électricité batiment</h6>
                                     <p class="text-blueGray-500 mb-4">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia omnis eos placeat.
+                                        L'électricien réalise des travaux d'installation et de mise en service des équipements électriques dans des 
+                                        bâtiments à usage domestique, tertiaire et industriel selon les règles de sécurité.
                                     </p>
                                 </div>
                             </div>

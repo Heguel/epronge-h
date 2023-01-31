@@ -127,15 +127,13 @@
                 style="background-image: url(https://images.unsplash.com/photo-1579451861283-a2239070aaa9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
                 <div class="absolute inset-0 z-0 bg-gradient-to-b from-orange-600 to-orange-500 opacity-75"></div>
                 <div class="z-10 w-full max-w-md">
-                    <div class="mb-6 font-bold leading-tight sm:text-4xl xl:text-5xl">Lorem ipsum sit...
+                    <img src="{{ asset('assets/brand/logo_epronge.jpg') }}"  alt="Epronge logo"/> <br />
+                    <div class="mb-6 font-bold leading-tight sm:text-4xl xl:text-5xl">À EPRONGE-H,
                     </div>
-                    <div class="xl:text-md font-normal text-gray-200 sm:text-sm"> What is Lorem Ipsum Lorem Ipsum is simply
-                        dummy
-                        text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy
-                        text ever
-                        since the 1500s when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book it
-                        has?</div>
+                    <div class="xl:text-md font-normal text-gray-200 sm:text-sm">Nous bâtissons l’avenir des jeunes en investissant dans leur formation 
+                        professionnelle et du professionnalisme car, nous ne trahirons pas notre devise. <br />
+                        <span class="font-bold">Mieux former pour être utile ! <span>
+                    </div>
                 </div>
                 <!---remove custom style-->
                 <ul class="circles">
@@ -159,7 +157,7 @@
                             Bienvenue!
                         </h2>
                         <p class="mt-2 text-sm text-gray-500">
-                            Veuillez remplir ce formulaire pour effectuer une réservation!
+                            Veuillez remplir ce formulaire pour éffectuer une réservation!
                         </p>
                     </div>
 
@@ -191,7 +189,7 @@
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="John" required>
                                 @error('firstname')
-                                    <small class="text-red-400">Veuillez entrer votre prenom </small>
+                                    <small class="text-red-400">Veuillez entrer votre prénom </small>
                                 @enderror
                             </div>
                             {{-- end first name --}}
@@ -218,7 +216,7 @@
                                     class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Email</label>
                                 <input type="email" id="email" name="email"
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                    placeholder="john.doe@gmail.com" required>
+                                    placeholder="john.doe@gmail.com">
                                 @error('email')
                                     <small class="text-red-400">Veuillez entrer votre email </small>
                                 @enderror
@@ -248,7 +246,7 @@
                                 <select id="gender" name="gender"
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     required>
-                                    <option value="">Selectionner une sexe</option>
+                                    <option value="">Selectionnez votre sexe</option>
                                     <option value="Female">Feminin</option>
                                     <option value="Male">Masculin</option>
                                     <option value="Other">Autre</option>
