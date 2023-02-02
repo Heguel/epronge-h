@@ -63,51 +63,61 @@
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img class="object-cover w-full h-96"
-                                        src="{{ asset('assets/img/graduation5.jpg') }}" alt="image" />
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <img class="object-cover w-full h-96"
-                                        src="{{ asset('assets/img/graduation3.jpg') }}" alt="image" />
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate1.jpeg') }}" alt="image" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="object-cover w-full h-96"
-                                        src="{{ asset('assets/img/graduation4.jpg') }}" alt="image" />
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate2.jpeg') }}" alt="image" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="object-cover w-full h-96"
-                                        src="{{ asset('assets/img/graduation.jpg') }}" alt="image" />
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate3.jpeg') }}" alt="image" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="object-cover w-full h-96"
-                                        src="{{ asset('assets/img/image1.jpeg') }}" alt="image" />
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate4.jpeg') }}" alt="image" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="object-cover w-full h-96"
-                                        src="{{ asset('assets/img/image2.jpeg') }}" alt="image" />
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate5.jpeg') }}" alt="image" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="object-cover w-full h-96"
-                                        src="{{ asset('assets/img/image3.jpeg') }}" alt="image" />
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate6.jpeg') }}" alt="image" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="object-cover w-full -h-96"
-                                        src="{{ asset('assets/img/image4.jpeg') }}" alt="image" />
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate7.jpeg') }}" alt="image" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="object-cover w-full h-96"
-                                        src="{{ asset('assets/img/image5.jpeg') }}" alt="image" />
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate8.jpeg') }}" alt="image" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="object-cover w-full h-96"
-                                        src="{{ asset('assets/img/image6.jpeg') }}" alt="image" />
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate10.jpeg') }}" alt="image" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="object-cover w-full h-96"
-                                        src="{{ asset('assets/img/image7.jpeg') }}" alt="image" />
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate11.jpeg') }}" alt="image" />
                                 </div>
-                               
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate12.jpeg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate13.jpeg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate14.jpeg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate15.jpeg') }}" alt="image" />
+                                </div>
                             </div>
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
