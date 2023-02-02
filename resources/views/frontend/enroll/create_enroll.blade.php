@@ -119,7 +119,7 @@
 @endsection
 
 @section('content')
-
+   
     <div class="relative flex min-h-screen rounded-lg">
         <div
             class="sm:flex min-w-0 flex-auto flex-col items-center bg-white sm:flex-row sm:justify-center md:items-start md:justify-start">
@@ -127,10 +127,11 @@
                 style="background-image: url(https://images.unsplash.com/photo-1579451861283-a2239070aaa9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
                 <div class="absolute inset-0 z-0 bg-gradient-to-b from-orange-600 to-orange-500 opacity-75"></div>
                 <div class="z-10 w-full max-w-md">
-                    <img src="{{ asset('assets/brand/logo_epronge.jpg') }}"  alt="Epronge logo"/> <br />
+                    <img src="{{ asset('assets/brand/logo_epronge.jpg') }}" alt="Epronge logo" /> <br />
                     <div class="mb-6 font-bold leading-tight sm:text-4xl xl:text-5xl">À EPRONGE-H,
                     </div>
-                    <div class="xl:text-md font-normal text-gray-200 sm:text-sm">Nous bâtissons l’avenir des jeunes en investissant dans leur formation 
+                    <div class="xl:text-md font-normal text-gray-200 sm:text-sm">Nous bâtissons l’avenir des jeunes en
+                        investissant dans leur formation
                         professionnelle et du professionnalisme car, nous ne trahirons pas notre devise. <br />
                         <span class="font-bold">Mieux former pour être utile ! <span>
                     </div>
@@ -314,8 +315,7 @@
             </div>
         </div>
     </div>
-
-
+   
 @endsection
 
 @section('scripts')

@@ -10,8 +10,9 @@
     <title>
         @yield('title') | Epronge-H
     </title>
-
-    @vite('resources/css/app.css')
+    @stack('styles')
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @yield('links')
 </head>
 
@@ -80,11 +81,12 @@
 
                 <span class="mt-2 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
                     <a class="text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
-                        href="https://bit.ly/3jiQUky">
+                        href="https://www.facebook.com/Epronge-H-104966754717892/
+                        ">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
                     <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
-                        href="wa.me/50937752935">
+                        href="https://wa.me/50937752935">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
 
@@ -109,6 +111,7 @@
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/datepicker.js"></script>
     @yield('scripts')
+    @stack('scripts')
 </body>
 
 </html>

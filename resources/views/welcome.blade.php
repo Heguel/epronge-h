@@ -8,6 +8,11 @@
 
 @section('content')
 
+    @push('styles')
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    @endpush
+
+
     {{-- start carouseel --}}
     <!-- component -->
     <section class="bg-white pt-24 ">
@@ -24,7 +29,8 @@
                         ?</span>
                 </h1>
                 <p class="mb-8 px-0 text-lg text-gray-600 md:text-xl lg:px-24">
-                    <span class="font-bold">Epronge-H, c’est la meilleure référence dans la cité en matière de formation professionnelle de qualité. <span>
+                    <span class="font-bold">Epronge-H, c’est la meilleure référence dans la cité en matière de formation
+                        professionnelle de qualité. <span>
                 </p>
                 <div class="mb-4 space-x-0 md:mb-8 md:space-x-2">
                     <a href="{{ route('newEnroll.form') }}"
@@ -50,17 +56,63 @@
                 </div>
             </div>
 
-            <div class="mx-auto my-2 mt-20 w-full text-center md:w-10/12">
-                <div class="relative z-0 mt-8 w-full">
+            <div class="mx-auto my-2 mt-12 w-full text-center md:w-10/12">
+                <div class="relative z-0 mt-3 w-full">
                     <div class="relative overflow-hidden rounded-lg shadow-2xl">
-                        {{-- <div class="flex h-11 flex-none items-center rounded-xl rounded-b-none bg-green-400 px-4">
-                            <div class="flex space-x-1.5">
-                                <div class="h-3 w-3 rounded-full border-2 border-white"></div>
-                                <div class="h-3 w-3 rounded-full border-2 border-white"></div>
-                                <div class="h-3 w-3 rounded-full border-2 border-white"></div>
+                    
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-96"
+                                        src="{{ asset('assets/img/graduation5.jpg') }}" alt="image" />
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-96"
+                                        src="{{ asset('assets/img/graduation3.jpg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-96"
+                                        src="{{ asset('assets/img/graduation4.jpg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-96"
+                                        src="{{ asset('assets/img/graduation.jpg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-96"
+                                        src="{{ asset('assets/img/image1.jpeg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-96"
+                                        src="{{ asset('assets/img/image2.jpeg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-96"
+                                        src="{{ asset('assets/img/image3.jpeg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full -h-96"
+                                        src="{{ asset('assets/img/image4.jpeg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-96"
+                                        src="{{ asset('assets/img/image5.jpeg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-96"
+                                        src="{{ asset('assets/img/image6.jpeg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-96"
+                                        src="{{ asset('assets/img/image7.jpeg') }}" alt="image" />
+                                </div>
+                               
                             </div>
-                        </div> --}}
-                        <img src="{{ asset('assets/img/graduation1.jpg') }}" alt="">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -69,12 +121,12 @@
     {{-- end carouseel --}}
 
     {{-- info --}}
-    <section id="seeMore"
-        class="relative my-16 bg-orange-100 py-16">
+    <section id="seeMore" class="relative my-16 bg-orange-100 py-16">
         <div class="container mx-auto">
             <div class="flex flex-wrap items-center">
                 <div class="-mt-78 mr-auto ml-auto w-10/12 px-12 md:w-6/12 md:px-4 lg:w-4/12">
-                    <div class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-orange-500 shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
+                    <div
+                        class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-orange-500 shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
                         <img alt="..." src="{{ asset('assets/img/graduation3.jpg') }}"
                             class="w-full rounded-t-lg align-middle">
                         <blockquote class="relative mb-4 p-8">
@@ -87,8 +139,10 @@
                             </h4>
                             <p class="text-md mt-2 font-light text-white">
                                 Pour toutes informations supplémentaires, passez nous voir à
-                                <span class="font-bold"> de l'institut Drop Of Love (IDOL) du Limbé, Malor, Limbé, Haiti</span><br>
-                                Ou contactez-nous par WhatsApp au numéro : <span class="font-bold"> (+509) 3775-2935</span> Ou pour appel
+                                <span class="font-bold"> de l'institut Drop Of Love (IDOL) du Limbé, Malor, Limbé,
+                                    Haiti</span><br>
+                                Ou contactez-nous par WhatsApp au numéro : <span class="font-bold"> (+509) 3775-2935</span>
+                                Ou pour appel
                                 direct composer le numero suivant: <span class="font-bold"> (+509) 3427-2493</span>
                             </p>
                         </blockquote>
@@ -96,7 +150,7 @@
                 </div>
 
                 <div class="w-full px-4 md:w-6/12">
-                    <h3 class="text-center text-3xl font-semibold " style="color: rgb(237,10,118);">Options disponibles</h3>
+                    <h3 class="text-center text-3xl font-semibold " style="color: rgb(237,10,118);">Les Options</h3>
                     <div class="flex flex-wrap">
                         <div class="w-full px-4 md:w-6/12">
 
@@ -108,8 +162,9 @@
                                     </div>
                                     <h6 class="mb-1 text-xl font-semibold">Informatique bureautique</h6>
                                     <p class="text-blueGray-500 mb-4">
-                                        La bureautique joue un rôle prépondérant pour la bonne marche d'une entreprise. 
-                                        Elle permet d'assurer les échanges à l'intérieur comme à l'extérieur de l'entreprise.
+                                        La bureautique joue un rôle prépondérant pour la bonne marche d'une entreprise.
+                                        Elle permet d'assurer les échanges à l'intérieur comme à l'extérieur de
+                                        l'entreprise.
                                     </p>
                                 </div>
                             </div>
@@ -123,8 +178,10 @@
                                         Cuisine et Pâtisserie
                                     </h6>
                                     <p class="text-blueGray-500 mb-4">
-                                        Un pâtissier est un professionnel qui confectionne et vend au détail sa production de gâteaux, 
-                                        de préparations culinaires à base de pâte garnie et cuites au four, mais aussi de viennoiseries, glaces, chocolats et confiseries.
+                                        Un pâtissier est un professionnel qui confectionne et vend au détail sa production
+                                        de gâteaux,
+                                        de préparations culinaires à base de pâte garnie et cuites au four, mais aussi de
+                                        viennoiseries, glaces, chocolats et confiseries.
                                     </p>
                                 </div>
                             </div>
@@ -138,8 +195,9 @@
                                     </div>
                                     <h6 class="mb-1 text-xl font-semibold">Carellage</h6>
                                     <p class="text-blueGray-500 mb-4">
-                                        Un carrelage est couramment utilisé pour la finition et la décoration 
-                                        des sols et des murs pour les habitations et autres locaux, aussi bien à l'intérieur qu'en extérieur.
+                                        Un carrelage est couramment utilisé pour la finition et la décoration
+                                        des sols et des murs pour les habitations et autres locaux, aussi bien à l'intérieur
+                                        qu'en extérieur.
                                     </p>
                                 </div>
                             </div>
@@ -151,7 +209,8 @@
                                     </div>
                                     <h6 class="mb-1 text-xl font-semibold">Électricité batiment</h6>
                                     <p class="text-blueGray-500 mb-4">
-                                        L'électricien réalise des travaux d'installation et de mise en service des équipements électriques dans des 
+                                        L'électricien réalise des travaux d'installation et de mise en service des
+                                        équipements électriques dans des
                                         bâtiments à usage domestique, tertiaire et industriel selon les règles de sécurité.
                                     </p>
                                 </div>
@@ -164,7 +223,32 @@
 
     </section>
     {{-- end info --}}
-
+    @push('scripts')
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                cssMode: true,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                spaceBetween: 30,
+                loop: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                mousewheel: true,
+                keyboard: true,
+            });
+        </script>
+    @endpush
 @endsection
 
 
