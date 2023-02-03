@@ -137,7 +137,7 @@
                 <div class="-mt-78 mr-auto ml-auto w-10/12 px-12 md:w-6/12 md:px-4 lg:w-4/12">
                     <div
                         class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-orange-500 shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
-                        <img alt="..." src="{{ asset('assets/img/graduation3.jpg') }}"
+                        <img alt="..." src="{{ asset('assets/img/graduate11.jpeg') }}"
                             class="w-full rounded-t-lg align-middle">
                         <blockquote class="relative mb-4 p-8">
                             {{-- <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
@@ -151,26 +151,26 @@
                                 Pour toutes informations supplémentaires, passez nous voir à
                                 <span class="font-bold"> de l'institut Drop Of Love (IDOL) du Limbé, Malor, Limbé,
                                     Haiti</span><br>
-                                Ou contactez-nous par WhatsApp au numéro : <span class="font-bold"> (+509) 3775-2935</span>
+                                Ou contactez-nous par WhatsApp au numéro : <span class="font-bold"> (+509) 3775-2935,</span>
                                 Ou pour appel
-                                direct composer le numero suivant: <span class="font-bold"> (+509) 3427-2493</span>
+                                direct composer le numéro suivant: <span class="font-bold"> (+509) 3427-2493</span>
                             </p>
                         </blockquote>
                     </div>
                 </div>
 
                 <div class="w-full px-4 md:w-6/12">
-                    <h3 class="text-center text-3xl font-semibold " style="color: rgb(237,10,118);">Les Options</h3>
+                    <h3 class="text-center text-3xl font-semibold " style="color: rgb(255, 138, 76);">Les Options</h3>
                     <div class="flex flex-wrap">
                         <div class="w-full px-4 md:w-6/12">
 
                             <div class="relative mt-4 flex flex-col">
                                 <div class="flex-auto px-4 py-5">
                                     <div
-                                        class="text-blueGray-500 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
+                                        class="text-blueGray-500 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg hover:text-orange-400">
                                         <i class="fas fa-laptop"></i>
                                     </div>
-                                    <h6 class="mb-1 text-xl font-semibold">Informatique bureautique</h6>
+                                    <h6 class="mb-1 text-xl font-semibold text-orange-400">Informatique bureautique</h6>
                                     <p class="text-blueGray-500 mb-4">
                                         La bureautique joue un rôle prépondérant pour la bonne marche d'une entreprise.
                                         Elle permet d'assurer les échanges à l'intérieur comme à l'extérieur de
@@ -181,10 +181,10 @@
                             <div class="relative flex min-w-0 flex-col">
                                 <div class="flex-auto px-4 py-5">
                                     <div
-                                        class="text-blueGray-500 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
-                                        <i class="fas fa-hamburger"></i>
+                                        class="text-blueGray-500 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg hover:text-orange-400">
+                                        <i class="fas fa-pizza-slice"></i>
                                     </div>
-                                    <h6 class="mb-1 text-xl font-semibold">
+                                    <h6 class="mb-1 text-xl font-semibold text-orange-400">
                                         Cuisine et Pâtisserie
                                     </h6>
                                     <p class="text-blueGray-500 mb-4">
@@ -200,10 +200,10 @@
                             <div class="relative mt-4 flex min-w-0 flex-col">
                                 <div class="flex-auto px-4 py-5">
                                     <div
-                                        class="text-blueGray-500 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
+                                        class="text-blueGray-500 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg hover:text-orange-400">
                                         <i class="fas fa-hammer"></i>
                                     </div>
-                                    <h6 class="mb-1 text-xl font-semibold">Carellage</h6>
+                                    <h6 class="mb-1 text-xl font-semibold text-orange-400">Carellage</h6>
                                     <p class="text-blueGray-500 mb-4">
                                         Un carrelage est couramment utilisé pour la finition et la décoration
                                         des sols et des murs pour les habitations et autres locaux, aussi bien à l'intérieur
@@ -214,10 +214,10 @@
                             <div class="relative flex min-w-0 flex-col">
                                 <div class="flex-auto px-4 py-5">
                                     <div
-                                        class="text-blueGray-500 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
+                                        class="text-blueGray-500 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg hover:text-orange-400">
                                         <i class="fas fa-toolbox"></i>
                                     </div>
-                                    <h6 class="mb-1 text-xl font-semibold">Électricité batiment</h6>
+                                    <h6 class="mb-1 text-xl font-semibold text-orange-400">Électricité batiment</h6>
                                     <p class="text-blueGray-500 mb-4">
                                         L'électricien réalise des travaux d'installation et de mise en service des
                                         équipements électriques dans des

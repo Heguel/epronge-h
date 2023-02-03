@@ -303,9 +303,8 @@
                                     class="focus:ring-3 h-4 w-4 rounded border border-gray-300 bg-gray-50 focus:ring-blue-300 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
                                     required>
                             </div>
-                            <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I
-                                agree with the
-                                <a href="#" class="text-orange-600 hover:underline dark:text-orange-500">terms and
+                            <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">J'accepte les
+                                <a href="#" class="text-orange-600 hover:underline dark:text-orange-500">termes et
                                     conditions</a>.</label>
                         </div>
                         <button type="submit"

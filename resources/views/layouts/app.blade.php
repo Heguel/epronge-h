@@ -24,7 +24,7 @@
             <a href="{{ url('') }}" class="flex items-center">
                 <img src="{{ asset('assets/brand/logo_epronge.jpg') }}" class="mr-3 h-6 sm:h-9" alt="Epronge Logo" />
                 <span
-                    class="self-center whitespace-nowrap text-xl font-semibold text-orange-500 dark:text-white">Epronge-h</span>
+                    class="self-center whitespace-nowrap text-xl font-semibold text-orange-500 dark:text-white">Epronge-H</span>
             </a>
 
             <button data-collapse-toggle="navbar-default" type="button"
@@ -78,23 +78,19 @@
                     ©{{ '2023' }}
                     <a href="#" class="hover:underline">{{ 'Epronge-H' }}</a> - Tous droits reservés.
                 </p>
-
+                
                 <span class="mt-2 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
-                    <a class="text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
+                    <a class="text-gray-500 text-xl transition duration-300 ease-in-out hover:text-blue-400"
                         href="https://www.facebook.com/Epronge-H-104966754717892/
                         ">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
-                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
+                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-green-400"
                         href="https://wa.me/50937752935">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
 
-                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
-                        href="instagram.com">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
+                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-cyan-400"
                         href="https://t.me/EPRONGE_H_LIMBE">
                         <i class="fa-brands fa-telegram"></i>
                     </a>
