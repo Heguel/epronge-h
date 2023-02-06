@@ -116,13 +116,16 @@
         }
     </style>
 
+    @include('sweetalert::alert')
+
+
 @endsection
 
 @section('content')
-   
+
     <div class="relative flex min-h-screen rounded-lg">
         <div
-            class="sm:flex min-w-0 flex-auto flex-col items-center bg-white sm:flex-row sm:justify-center md:items-start md:justify-start">
+            class="min-w-0 flex-auto flex-col items-center bg-white sm:flex sm:flex-row sm:justify-center md:items-start md:justify-start">
             <div class="relative hidden h-full flex-auto items-center justify-center overflow-hidden bg-orange-900 bg-cover bg-no-repeat p-10 text-white sm:w-1/2 md:flex xl:w-1/2"
                 style="background-image: url(https://images.unsplash.com/photo-1579451861283-a2239070aaa9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
                 <div class="absolute inset-0 z-0 bg-gradient-to-b from-orange-600 to-orange-500 opacity-75"></div>
@@ -151,8 +154,8 @@
                 </ul>
             </div>
             <div
-                class="w-full lg:w-2/5 bg-white p-8 sm:w-auto sm:rounded-lg md:flex md:h-full md:items-center md:justify-center md:rounded-none md:p-10 lg:p-14 xl:w-2/5">
-                <div class="w-full lg:max-w-md space-y-8">
+                class="w-full bg-white p-8 sm:w-auto sm:rounded-lg md:flex md:h-full md:items-center md:justify-center md:rounded-none md:p-10 lg:w-2/5 lg:p-14 xl:w-2/5">
+                <div class="w-full space-y-8 lg:max-w-md">
                     <div class="text-center">
                         <h2 class="mt-6 text-5xl font-bold text-orange-500">
                             Bienvenue!
@@ -181,6 +184,7 @@
                                 {{ session('success') }}
                             </div>
                         @endif
+                        
                         <div class="mb-6 grid gap-6 md:grid-cols-2">
                             {{-- start first name --}}
                             <div>
@@ -303,7 +307,8 @@
                                     class="focus:ring-3 h-4 w-4 rounded border border-gray-300 bg-gray-50 focus:ring-blue-300 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
                                     required>
                             </div>
-                            <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">J'accepte les
+                            <label for="remember"
+                                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">J'accepte les
                                 <a href="#" class="text-orange-600 hover:underline dark:text-orange-500">termes et
                                     conditions</a>.</label>
                         </div>
@@ -314,7 +319,8 @@
             </div>
         </div>
     </div>
-   
+
+
 @endsection
 
 @section('scripts')

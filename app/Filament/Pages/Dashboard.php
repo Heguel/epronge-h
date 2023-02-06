@@ -8,7 +8,7 @@ use App\Filament\Resources\DashboardResource\Widgets\DasboardStatsOverview;
 
 class Dashboard extends BasePage
 {
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
 
     protected static string $view = 'filament.pages.dashboard';
 

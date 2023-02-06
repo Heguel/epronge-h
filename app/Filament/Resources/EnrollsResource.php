@@ -28,7 +28,7 @@ class EnrollsResource extends Resource
     protected static ?string $modelLabel = 'Réservations';
     protected static ?string $navigationGroup = 'Fonctionnalités';
     protected static ?string $navigationLabel = 'Réservations';
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'bi-list-check';
     protected static ?string $recordTitleAttribute = 'lastname';
 
     

@@ -19,9 +19,12 @@ class Option extends Model
 
     ];
 
+    protected $casts = [
+        'active' => 'boolean',
+    ];
+
     public function enrolls()
     {
         return $this->hasMany(Enroll::class);
     }
-
 }

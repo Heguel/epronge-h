@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Enroll;
 use App\Models\Option;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class NewEnrollController extends Controller
 {
@@ -71,8 +72,9 @@ class NewEnrollController extends Controller
 
         // Save the enroll in the database
         if ($validatedData) {
-            Enroll::create($validatedData);
-            return redirect()->route('newEnroll.form')->with('success', 'Inscription reussie!');
+            $newEnr = Enroll::create($validatedData);
+            Alert::success('Production Enrollment');
+            return redirect()->route('newEnroll.form')->with('success', 'Inscription pour ' . $newEnr->firstname . ' reussie!');
         } else {
             return redirect()->route('newEnroll.form')->with('error', 'Quelque chose s\'est mal passe!');
         }

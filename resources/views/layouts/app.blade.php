@@ -13,11 +13,14 @@
     @stack('styles')
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
     @yield('links')
+    @livewireStyles
 </head>
 
 <body class="">
 
+    @include('sweetalert::alert')
 
     <nav class="rounded border-gray-200 bg-white px-2 py-2.5 dark:bg-gray-900 sm:px-4">
         <div class="container mx-auto flex flex-wrap items-center justify-between">
@@ -69,7 +72,7 @@
 
 
     <footer
-        class="flex items-center justify-between rounded-lg bg-white p-4 shadow dark:bg-gray-900 sm:flex-col sm:justify-evenly md:px-6 md:py-8 transition-transform duration-300 ease-in-out">
+        class="flex items-center justify-between rounded-lg bg-white p-4 shadow transition-transform duration-300 ease-in-out dark:bg-gray-900 sm:flex-col sm:justify-evenly md:px-6 md:py-8">
 
 
         <div class="w-full">
@@ -78,26 +81,26 @@
                     ©{{ '2023' }}
                     <a href="#" class="hover:underline">{{ 'Epronge-H' }}</a> - Tous droits reservés.
                 </p>
-                
+
                 <span class="mt-2 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
-                    <a class="text-gray-500 text-xl transition duration-300 ease-in-out hover:text-blue-400"
+                    <a class="text-xl text-gray-500 transition duration-300 ease-in-out hover:text-blue-400"
                         href="https://www.facebook.com/Epronge-H-104966754717892/
                         ">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
-                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-green-400"
+                    <a class="ml-3 text-xl text-gray-500 transition duration-300 ease-in-out hover:text-green-400"
                         href="https://wa.me/50937752935">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
 
-                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-cyan-400"
+                    <a class="ml-3 text-xl text-gray-500 transition duration-300 ease-in-out hover:text-cyan-400"
                         href="https://t.me/EPRONGE_H_LIMBE">
                         <i class="fa-brands fa-telegram"></i>
                     </a>
                 </span>
             </div>
             <hr>
-            <p class=" py-4 text-center text-base text-gray-500">
+            <p class="py-4 text-center text-base text-gray-500">
                 Powered by <a href="mailto:heguel55@gmail.com/" target="_BLANK" class="text-orange-400">Ing. Heguel</a>
             </p>
         </div>
@@ -108,6 +111,52 @@
     <script src="../path/to/flowbite/dist/datepicker.js"></script>
     @yield('scripts')
     @stack('scripts')
+    @livewireScripts
+
+    {{-- start sweetalert --}}
+    <script>
+        // window.addEventListener('event-success-create-enroll', event => {
+        //     Swal.fire({
+        //         title: 'Custom width, padding, color, background.',
+        //         width: 600,
+        //         padding: '3em',
+        //         color: '#716add',
+        //         showClass: {
+        //             popup: 'animate__animated animate__fadeInDown'
+        //         },
+        //         hideClass: {
+        //             popup: 'animate__animated animate__fadeOutUp'
+        //         },
+        //         showDenyButton: true,
+        //         showCancelButton: true,
+        //         confirmButtonText: 'Save',
+        //         denyButtonText: `Don't save`
+        //         background: '#fff url(/images/trees.png)',
+        //         backdrop: `
+        //             rgba(0,0,123,0.4)
+        //             url("/images/nyan-cat.gif")
+        //             left top
+        //             no-repeat
+        //         `
+        //     })
+        // })
+        //     Swal.fire({
+        //     title: 'Custom width, padding, color, background.',
+        //     width: 600,
+        //     padding: '3em',
+        //     color: '#716add',
+        //     background: '#fff url(/images/trees.png)',
+        //     backdrop: `
+    //       rgba(0,0,123,0.4)
+    //       url("/images/nyan-cat.gif")
+    //       left top
+    //       no-repeat
+    //     `
+        //   })
+    </script>
+    {{-- end sweetalert --}}
+
+
 </body>
 
 </html>
