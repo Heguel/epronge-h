@@ -8,10 +8,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>
-        @yield('title') | Epronge-h
+        @yield('title') | Epronge-H
     </title>
-
-    @vite('resources/css/app.css')
+    @stack('styles')
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @yield('links')
 </head>
 
@@ -21,9 +22,9 @@
     <nav class="rounded border-gray-200 bg-white px-2 py-2.5 dark:bg-gray-900 sm:px-4">
         <div class="container mx-auto flex flex-wrap items-center justify-between">
             <a href="{{ url('') }}" class="flex items-center">
-                <img src="{{ asset('assets/brand/epronge_logo.png') }}" class="mr-3 h-6 sm:h-9" alt="Epronge Logo" />
+                <img src="{{ asset('assets/brand/logo_epronge.jpg') }}" class="mr-3 h-6 sm:h-9" alt="Epronge Logo" />
                 <span
-                    class="self-center whitespace-nowrap text-xl font-semibold text-orange-500 dark:text-white">Epronge-h</span>
+                    class="self-center whitespace-nowrap text-xl font-semibold text-orange-500 dark:text-white">Epronge-H</span>
             </a>
 
             <button data-collapse-toggle="navbar-default" type="button"
@@ -77,30 +78,27 @@
                     ©{{ '2023' }}
                     <a href="#" class="hover:underline">{{ 'Epronge-H' }}</a> - Tous droits reservés.
                 </p>
-
+                
                 <span class="mt-2 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
-                    <a class="text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
-                        href="facebook.com">
+                    <a class="text-gray-500 text-xl transition duration-300 ease-in-out hover:text-blue-400"
+                        href="https://www.facebook.com/Epronge-H-104966754717892/
+                        ">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
-                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
-                        href="wa.me/50922222222">
+                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-green-400"
+                        href="https://wa.me/50937752935">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
 
-                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
-                        href="instagram.com">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-orange-400"
-                        href="telegram.com">
+                    <a class="ml-3 text-gray-500 text-xl transition duration-300 ease-in-out hover:text-cyan-400"
+                        href="https://t.me/EPRONGE_H_LIMBE">
                         <i class="fa-brands fa-telegram"></i>
                     </a>
                 </span>
             </div>
             <hr>
             <p class=" py-4 text-center text-base text-gray-500">
-                Powered by <a href="https://haitiandevelopers.com/" target="_BLANK" class="text-orange-400">HD</a>
+                Powered by <a href="mailto:heguel55@gmail.com/" target="_BLANK" class="text-orange-400">Ing. Heguel</a>
             </p>
         </div>
     </footer>
@@ -109,6 +107,7 @@
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/datepicker.js"></script>
     @yield('scripts')
+    @stack('scripts')
 </body>
 
 </html>
