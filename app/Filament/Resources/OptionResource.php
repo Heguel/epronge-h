@@ -20,6 +20,9 @@ class OptionResource extends Resource
 {
     protected static ?string $model = Option::class;
     protected static ?string $recordTitleAttribute = 'name';
+    protected static ?string $modelLabel = 'Options';
+    protected static ?string $navigationGroup = 'Fonctionnalités';
+
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 

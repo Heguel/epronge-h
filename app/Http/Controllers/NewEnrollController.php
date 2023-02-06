@@ -21,6 +21,11 @@ class NewEnrollController extends Controller
         ]));
     }
 
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function index()
     {
     }
@@ -46,7 +51,6 @@ class NewEnrollController extends Controller
         // Validate the form data
         /*
 
-
 'phone' => 'required|unique:enrolls,phone',
         'email' => 'required|unique:enrolls,email'
         */
@@ -62,14 +66,14 @@ class NewEnrollController extends Controller
 
         // Generate code before inserting
         $request->merge([
-            'code' => substr($request->firstname, 0, 1) . substr($request->lastname, 0, 1) ."-". mt_rand(100000, 999999)
+            'code' => substr($request->firstname, 0, 1) . substr($request->lastname, 0, 1) . "-" . mt_rand(100000, 999999)
         ]);
 
         // Save the enroll in the database
         if ($validatedData) {
             Enroll::create($validatedData);
             return redirect()->route('newEnroll.form')->with('success', 'Inscription reussie!');
-        }else {
+        } else {
             return redirect()->route('newEnroll.form')->with('error', 'Quelque chose s\'est mal passe!');
         }
     }

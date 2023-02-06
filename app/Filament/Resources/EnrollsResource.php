@@ -25,7 +25,9 @@ use App\Filament\Resources\DashboardResource\Widgets\DasboardStatsOverview;
 class EnrollsResource extends Resource
 {
     protected static ?string $model = Enrolls::class;
-
+    protected static ?string $modelLabel = 'Réservations';
+    protected static ?string $navigationGroup = 'Fonctionnalités';
+    protected static ?string $navigationLabel = 'Réservations';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
     protected static ?string $recordTitleAttribute = 'lastname';
 
