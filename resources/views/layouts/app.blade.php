@@ -10,9 +10,17 @@
     <title>
         @yield('title') | Epronge-H
     </title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     @stack('styles')
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @include('sweetalert::alert')
     
     @yield('links')
     @livewireStyles
@@ -20,7 +28,6 @@
 
 <body class="">
 
-    @include('sweetalert::alert')
 
     <nav class="rounded border-gray-200 bg-white px-2 py-2.5 dark:bg-gray-900 sm:px-4">
         <div class="container mx-auto flex flex-wrap items-center justify-between">
@@ -115,44 +122,72 @@
 
     {{-- start sweetalert --}}
     <script>
-        // window.addEventListener('event-success-create-enroll', event => {
-        //     Swal.fire({
-        //         title: 'Custom width, padding, color, background.',
-        //         width: 600,
-        //         padding: '3em',
-        //         color: '#716add',
-        //         showClass: {
-        //             popup: 'animate__animated animate__fadeInDown'
-        //         },
-        //         hideClass: {
-        //             popup: 'animate__animated animate__fadeOutUp'
-        //         },
-        //         showDenyButton: true,
-        //         showCancelButton: true,
-        //         confirmButtonText: 'Save',
-        //         denyButtonText: `Don't save`
-        //         background: '#fff url(/images/trees.png)',
-        //         backdrop: `
-        //             rgba(0,0,123,0.4)
-        //             url("/images/nyan-cat.gif")
-        //             left top
-        //             no-repeat
-        //         `
-        //     })
+        window.addEventListener('NewEnrollEvent', event => {
+            console.warn("Event must be pass");
+            console.log(event);
+
+            Swal.fire({
+                title: 'Custom width, padding, color, background.',
+                width: 600,
+                padding: '3em',
+                color: '#716add',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                },
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: 'Save',
+                denyButtonText: `Don't save`
+                background: '#fff url(/images/trees.png)',
+                backdrop: `
+                rgba(0,0,123,0.4)
+                url("/images/nyan-cat.gif")
+                left top
+                no-repeat
+            `
+            })
+        })
+
+        window.addEventListener('event-success-create-enroll', event => {
+            console.warn("Event must be pass");
+            console.log("HHHH: ", event);
+
+            Swal.fire({
+                title: '<strong>HTML <u>example</u></strong>',
+                icon: 'info',
+                html: 'You can use <b>bold text</b>, ' +
+                    '<a href="#">links</a> ' +
+                    'and other HTML tags',
+                showCloseButton: true,
+                showCancelButton: true,
+                focusConfirm: false,
+                confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+                confirmButtonAriaLabel: 'Thumbs up, great!',
+                cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
+                cancelButtonAriaLabel: 'Thumbs down'
+            })
+        })
+
+        //         Swal.fire({
+        //   title: '<strong>HTML <u>example</u></strong>',
+        //   icon: 'info',
+        //   html:
+        //     'You can use <b>bold text</b>, ' +
+        //     '<a href="//sweetalert2.github.io">links</a> ' +
+        //     'and other HTML tags',
+        //   showCloseButton: true,
+        //   showCancelButton: true,
+        //   focusConfirm: false,
+        //   confirmButtonText:
+        //     '<i class="fa fa-thumbs-up"></i> Great!',
+        //   confirmButtonAriaLabel: 'Thumbs up, great!',
+        //   cancelButtonText:
+        //     '<i class="fa fa-thumbs-down"></i>',
+        //   cancelButtonAriaLabel: 'Thumbs down'
         // })
-        //     Swal.fire({
-        //     title: 'Custom width, padding, color, background.',
-        //     width: 600,
-        //     padding: '3em',
-        //     color: '#716add',
-        //     background: '#fff url(/images/trees.png)',
-        //     backdrop: `
-    //       rgba(0,0,123,0.4)
-    //       url("/images/nyan-cat.gif")
-    //       left top
-    //       no-repeat
-    //     `
-        //   })
     </script>
     {{-- end sweetalert --}}
 

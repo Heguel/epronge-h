@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewEnrollEvent;
 use App\Models\Enroll;
 use App\Models\Option;
 use Illuminate\Http\Request;
@@ -17,6 +18,7 @@ class NewEnrollController extends Controller
     public function inscriptionFunc()
     {
         $options = Option::all();
+
         return view('frontend.enroll.create_enroll', compact([
             'options'
         ]));
@@ -73,8 +75,10 @@ class NewEnrollController extends Controller
         // Save the enroll in the database
         if ($validatedData) {
             $newEnr = Enroll::create($validatedData);
-            Alert::success('Production Enrollment');
-            return redirect()->route('newEnroll.form')->with('success', 'Inscription pour ' . $newEnr->firstname . ' reussie!');
+            Alert::success('event-success-create-enroll', "Ce livre a été ajouté dans votre panier");
+            event('event-success-create-enroll', $newEnr);
+
+            return redirect()->route('newEnroll.form')->with('message', 'Inscription pour ' . $newEnr->firstname . ' reussie!');
         } else {
             return redirect()->route('newEnroll.form')->with('error', 'Quelque chose s\'est mal passe!');
         }
