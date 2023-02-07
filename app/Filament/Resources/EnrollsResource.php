@@ -31,23 +31,36 @@ class EnrollsResource extends Resource
     protected static ?string $navigationIcon = 'bi-list-check';
     protected static ?string $recordTitleAttribute = 'lastname';
 
-    
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 //
                 Card::make()->schema([
-                    TextInput::make('code')->required()->placeholder('AB-000000'),
+                    TextInput::make('code')->required()->placeholder('AB-000000')
+                    ->disabled(true),
                     TextInput::make('lastname')->required(),
-                    TextInput::make('firstname')->required(),
+                    TextInput::make('firstname')
+                        ->required()
+                        ->reactive()
+                        ->afterStateUpdated(function (callable $get, callable $set) {
+                            if ($get('lastname') && $get('firstname')) {
+                                $lastn = $get('lastname');
+                                $firstn = $get('firstname');
+                                $set('code', self::getRandomCode($lastn, $firstn));
+                            } else {
+                                $set('code', null);
+                            }
+                        }),
                     TextInput::make('email')->email()->required(),
                     Select::make('gender')
                         ->options([
                             'Male' => 'Masculin',
                             'Female' => 'Feminin',
                             'Other' => 'Autre',
-                        ]),
+                        ])
+                        ->searchable(),
                     TextInput::make('phone')->tel()
                         ->telRegex('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/')
                         ->required(),
@@ -87,6 +100,10 @@ class EnrollsResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
+    }
+    public static function getRandomCode($first, $last)
+    {
+        return substr($first, 0, 1) . substr($last, 0, 1) . "-" . mt_rand(100000, 999999);
     }
 
     public static function getRelations(): array
