@@ -63,22 +63,24 @@ class NewEnrollController extends Controller
             'gender' => 'required|in:Female,Male',
             'phone' => 'required|string|max:255|unique:enrolls,phone',
             'email' => 'nullable|email|unique:enrolls,email',
-            'date_of_birth' => 'required|date',
+            'date_of_birth' => 'required|date|before:-12 years',
             'option_id' => 'required|exists:options,id',
         ]);
 
         // Generate code before inserting
-        $request->merge([
-            'code' => substr($request->firstname, 0, 1) . substr($request->lastname, 0, 1) . "-" . mt_rand(100000, 999999)
-        ]);
-
+        $code = substr($request->firstname, 0, 1) . substr($request->lastname, 0, 1) . mt_rand(100000, 999999);
+        $validatedData['code'] = $code;
+        
         // Save the enroll in the database
         if ($validatedData) {
             $newEnr = Enroll::create($validatedData);
-            Alert::success('event-success-create-enroll', "Ce livre a été ajouté dans votre panier");
+            Alert::success('event-success-create-enroll', 'Inscription reussie!<br/> Veuillez conservez votre code pour valider votre inscription au secrétariat:<br/><br/> Code: ' . $newEnr->code);
             event('event-success-create-enroll', $newEnr);
 
-            return redirect()->route('newEnroll.form')->with('message', 'Inscription pour ' . $newEnr->firstname . ' reussie!');
+            return redirect()->route('newEnroll.form')->with([
+                'success' => 'Inscription reussie!',
+                'info' => 'Veuillez conservez votre code pour valider votre inscription au secrétariat:\n Code: ' . $newEnr->code,
+            ]);
         } else {
             return redirect()->route('newEnroll.form')->with('error', 'Quelque chose s\'est mal passe!');
         }

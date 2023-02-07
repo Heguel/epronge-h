@@ -11,17 +11,20 @@
         @yield('title') | Epronge-H
     </title>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    {{-- <link href="{{ asset('assets/plugins/bootstrap/bootstrap.min.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('assets/plugins/jquery-3.5.1/jquery-ui.css') }}" rel="stylesheet" />
+    <script src="{{ asset('assets/plugins/jquery-3.5.1/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-3.5.1/jquery-1.12.4.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-3.5.1/jquery-ui.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/toastr/toastr.min.css') }}">
+    <script src="{{ asset('assets/plugins/toastr/toastr.min.js') }}"></script>
+
     @stack('styles')
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     @include('sweetalert::alert')
-    
+
     @yield('links')
     @livewireStyles
 </head>

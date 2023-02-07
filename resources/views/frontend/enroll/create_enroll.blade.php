@@ -167,7 +167,7 @@
 
                     <form method="POST" action="{{ route('enrolls.store') }}">
                         @csrf
-                        @if (isset($errors))
+                        @if (isset($errors) && $errors->all())
                             <div class="alert alert-danger">
                                 <ul class="mb-2 p-2">
                                     @foreach ($errors->all() as $error)
@@ -287,11 +287,12 @@
 
                             {{-- start date_of_birth --}}
                             <div>
-                                <label for="date_of_birth"
+                                <label for="birthdayBefore12Years"
                                     class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
                                     Date de naissance
                                 </label>
-                                <input type="date" id="date_of_birth" name="date_of_birth"
+                                
+                                <input type="date" id="birthdayBefore12Years" name="date_of_birth"
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="Select a date" required>
                                 @error('date_of_birth')
@@ -327,13 +328,35 @@
 
 @section('scripts')
 
+    <script>
+        $(document).ready(function() {
+            var date = new Date();
+            date.setFullYear(date.getFullYear() - 12);
+
+            $('#birthdayBefore12Years').attr('max', date.toISOString().substring(0, 10));
+            $('#birthdayBefore12Years').val(date.toISOString().substring(0, 10));
+        });
+    </script>
+
 
     <script>
         @if (Session::has('message'))
             toastr.options = {
-                "closeButton": false,
-                "progressBar": false,
-                "timeOut":15000 * 60 * 3 // duration in milliseconds
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": 0,
+                "extendedTimeOut": 0,
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut",
+                "tapToDismiss": false
             }
             toastr.success("{{ session('message') }}");
         @endif
@@ -341,7 +364,7 @@
         @if (Session::has('error'))
             toastr.options = {
                 "closeButton": true,
-                "progressBar": true
+                "progressBar": true "timeOut": 15000 * 60 * 3 // duration in milliseconds
             }
             toastr.error("{{ session('error') }}");
         @endif
@@ -349,7 +372,20 @@
         @if (Session::has('info'))
             toastr.options = {
                 "closeButton": true,
-                "progressBar": true
+                "debug": false,
+                "newestOnTop": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": 0,
+                "extendedTimeOut": 0,
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut",
+                "tapToDismiss": false
             }
             toastr.info("{{ session('info') }}");
         @endif
@@ -357,7 +393,7 @@
         @if (Session::has('warning'))
             toastr.options = {
                 "closeButton": true,
-                "progressBar": true
+                "progressBar": true "timeOut": 1000 * 60 * 3 // duration in milliseconds
             }
             toastr.warning("{{ session('warning') }}");
         @endif
