@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Option;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -25,6 +26,7 @@ class Enrolls extends Model
         'date_of_birth'
     ];
 
+
     /**
      * The "booting" method of the model.
      *
@@ -35,9 +37,10 @@ class Enrolls extends Model
         parent::boot();
 
         static::creating(function ($enroll) {
-            $enroll->code = substr($enroll->firstname, 0, 1) . substr($enroll->lastname, 0, 1);
+            $enroll->code = Str::upper(substr($enroll->lastname, 0, 1) . substr($enroll->firstname, 0, 1) . "-". mt_rand(100000, 999999));
         });
     }
+
     /**
      * Get the option that owns the Enroll
      *

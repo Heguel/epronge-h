@@ -29,7 +29,7 @@ class EnrollsResource extends Resource
     protected static ?string $navigationGroup = 'Fonctionnalités';
     protected static ?string $navigationLabel = 'Réservations';
     protected static ?string $navigationIcon = 'bi-list-check';
-    protected static ?string $recordTitleAttribute = 'lastname';
+    protected static ?string $recordTitleAttribute = 'code';
 
 
     public static function form(Form $form): Form
@@ -77,6 +77,7 @@ class EnrollsResource extends Resource
         return $table
             ->columns([
                 //
+                TextColumn::make('code')->searchable()->sortable()->label('Code Étudiant'),
                 TextColumn::make('lastname')->searchable()->sortable()->label('Nom'),
                 TextColumn::make('firstname')->searchable()->sortable()->label('Prénom'),
                 TextColumn::make('email')->searchable()->sortable(),

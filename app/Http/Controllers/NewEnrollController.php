@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\NewEnrollEvent;
 use App\Models\Enroll;
 use App\Models\Option;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Events\NewEnrollEvent;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class NewEnrollController extends Controller
@@ -68,9 +69,10 @@ class NewEnrollController extends Controller
         ]);
 
         // Generate code before inserting
-        $code = substr($request->firstname, 0, 1) . substr($request->lastname, 0, 1) . mt_rand(100000, 999999);
+        $code = Str::upper(substr($validatedData['lastname'], 0, 1) . substr($validatedData['firstname'], 0, 1) . "-" . mt_rand(100000, 999999));
         $validatedData['code'] = $code;
-        
+
+
         // Save the enroll in the database
         if ($validatedData) {
             $newEnr = Enroll::create($validatedData);
