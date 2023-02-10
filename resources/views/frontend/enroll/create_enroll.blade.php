@@ -18,7 +18,7 @@
             display: block;
             list-style: none;
             width: 20px;
-            height: 20px;
+            height: 20px;“
             background: rgba(255, 255, 255, 0.2);
             animation: animate 25s linear infinite;
             bottom: -150px;
