@@ -134,9 +134,9 @@
     <section id="seeMore" class="relative my-16 bg-orange-100 py-16">
         <div class="container mx-auto">
             <div class="flex flex-wrap items-center">
-                <div class="-mt-78 mr-auto ml-auto w-10/12 px-12 md:w-6/12 md:px-4 lg:w-4/12">
+                <div class="-mt-78 mr-auto ml-auto w-11/12 md:px-12 md:w-6/12 md:px-4 lg:w-4/12">
                     <div
-                        class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-orange-500 shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
+                        class="disabled:scale-105 relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-orange-500 shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
                         <img alt="..." src="{{ asset('assets/img/graduate11.jpeg') }}"
                             class="w-full rounded-t-lg align-middle">
                         <blockquote class="relative mb-4 p-8">
