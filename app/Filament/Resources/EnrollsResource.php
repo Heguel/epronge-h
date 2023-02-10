@@ -40,8 +40,9 @@ class EnrollsResource extends Resource
                 Card::make()->schema([
                     TextInput::make('code')->required()->placeholder('AB-000000')
                     ->disabled(true),
-                    TextInput::make('lastname')->required(),
+                    TextInput::make('lastname')->required()->label("Nom"),
                     TextInput::make('firstname')
+                    ->label("Prenom")
                         ->required()
                         ->reactive()
                         ->afterStateUpdated(function (callable $get, callable $set) {
@@ -53,21 +54,23 @@ class EnrollsResource extends Resource
                                 $set('code', null);
                             }
                         }),
-                    TextInput::make('email')->email()->required(),
-                    Select::make('gender')
+                    TextInput::make('email')->email(),
+                    Select::make('genre')
                         ->options([
                             'Male' => 'Masculin',
                             'Female' => 'Feminin',
                             'Other' => 'Autre',
                         ])
+                        ->label("Sexe")
                         ->searchable(),
                     TextInput::make('phone')->tel()
                         ->telRegex('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/')
-                        ->required(),
+                        ->required()
+                        ->label("Telephone"),
                     Select::make('option_id')
                         ->relationship('option', 'name'),
 
-                    DatePicker::make('date_of_birth')->required(),
+                    DatePicker::make('date_of_birth')->required()->label("Date de naissance"),
                 ])
             ]);
     }
