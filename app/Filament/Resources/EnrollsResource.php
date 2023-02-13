@@ -61,13 +61,13 @@ class EnrollsResource extends Resource
                             'Female' => 'Feminin',
                             'Other' => 'Autre',
                         ])
-                        ->label("Sexe")
+                        ->label("Sexe")->required()
                         ->searchable(),
                     TextInput::make('phone')->tel()
                         ->telRegex('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/')
                         ->required()
                         ->label("Telephone"),
-                    Select::make('option_id')
+                    Select::make('option_id')->required()
                         ->relationship('option', 'name'),
 
                     DatePicker::make('date_of_birth')->required()->label("Date de naissance"),

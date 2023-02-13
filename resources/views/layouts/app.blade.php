@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>
-        @yield('title') | Epronge-H
+        @yield('title') | EPRONGE-H
     </title>
 
     {{-- <link href="{{ asset('assets/plugins/bootstrap/bootstrap.min.css') }}" rel="stylesheet"> --}}
@@ -37,7 +37,7 @@
             <a href="{{ url('') }}" class="flex items-center">
                 <img src="{{ asset('assets/brand/logo_epronge.jpg') }}" class="mr-3 h-6 sm:h-9" alt="Epronge Logo" />
                 <span
-                    class="self-center whitespace-nowrap text-xl font-semibold text-orange-500 dark:text-white">Epronge-H</span>
+                    class="self-center whitespace-nowrap text-xl font-semibold text-orange-500 dark:text-white">EPRONGE-H</span>
             </a>
 
             <button data-collapse-toggle="navbar-default" type="button"

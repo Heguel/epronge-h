@@ -29,8 +29,8 @@
                         ?</span>
                 </h1>
                 <p class="mb-8 px-0 text-lg text-gray-600 md:text-xl lg:px-24">
-                    <span class="font-bold">Epronge-H, c’est la meilleure référence dans la cité en matière de formation
-                        professionnelle de qualité. <span>
+                    <span class="font-bold">EPRONGE-H, école professionnelle de la nouvelle génération-Haïtienne de Limbé, 
+                        c’est la meilleure référence dans la cité en matière de qualité. <span>
                 </p>
                 <div class="mb-4 space-x-0 md:mb-8 md:space-x-2">
                     <a href="{{ route('newEnroll.form') }}"
@@ -93,6 +93,10 @@
                                 <div class="swiper-slide">
                                     <img class="object-cover w-full h-full"
                                         src="{{ asset('assets/img/graduate8.jpeg') }}" alt="image" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="object-cover w-full h-full"
+                                        src="{{ asset('assets/img/graduate9.jpg') }}" alt="image" />
                                 </div>
                                 <div class="swiper-slide">
                                     <img class="object-cover w-full h-full"
