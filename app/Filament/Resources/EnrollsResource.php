@@ -38,8 +38,8 @@ class EnrollsResource extends Resource
             ->schema([
                 //
                 Card::make()->schema([
-                    TextInput::make('code')->required()->placeholder('AB-000000')
-                    ->disabled(true),
+                    // TextInput::make('code')->required()->placeholder('AB-000000')
+                    // ->disabled(true),
                     TextInput::make('lastname')->required(),
                     TextInput::make('firstname')
                         ->required()
@@ -66,8 +66,9 @@ class EnrollsResource extends Resource
                         ->required(),
                     Select::make('option_id')
                         ->relationship('option', 'name'),
-
-                    DatePicker::make('date_of_birth')->required(),
+                    DatePicker::make('date_of_birth')
+                    ->maxDate(now()->subYears(12))
+                    ->required(),
                 ])
             ]);
     }

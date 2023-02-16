@@ -117,8 +117,6 @@
     </style>
 
     @include('sweetalert::alert')
-
-
 @endsection
 
 @section('content')

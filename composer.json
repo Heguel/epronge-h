@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "eprongeh/eprongeh_website",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Formulaire d'inscription pour epronge",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
