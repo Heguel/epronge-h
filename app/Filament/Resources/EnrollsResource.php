@@ -38,8 +38,7 @@ class EnrollsResource extends Resource
             ->schema([
                 //
                 Card::make()->schema([
-                    TextInput::make('code')->required()->placeholder('AB-000000')
-                    ->disabled(true),
+                    
                     TextInput::make('lastname')->required()->label("Nom"),
                     TextInput::make('firstname')
                     ->label("Prenom")

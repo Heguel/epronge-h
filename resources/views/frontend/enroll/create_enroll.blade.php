@@ -237,7 +237,7 @@
                                     téléphone</label>
                                 <input type="tel" id="phone" name="phone"
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                    placeholder="0000-0000" pattern="[0-9]{4}-[0-9]{4}" required>
+                                    placeholder="00000000" pattern="[0-9]{4}[0-9]{4}" required>
                                 @error('phone')
                                     <small class="text-red-400">Veuillez entrer votre numéro de téléphone </small>
                                 @enderror
