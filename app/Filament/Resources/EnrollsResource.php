@@ -39,11 +39,15 @@ class EnrollsResource extends Resource
                 //
                 Card::make()->schema([
                     
-                    TextInput::make('lastname')->required()->label("Nom"),
+                    TextInput::make('lastname')->required()->label("Nom")
+                        ->minLength(3)
+                        ->maxLength(25),
                     TextInput::make('firstname')
                     ->label("Prenom")
                         ->required()
                         ->reactive()
+                        ->minLength(3)
+                        ->maxLength(25)
                         ->afterStateUpdated(function (callable $get, callable $set) {
                             if ($get('lastname') && $get('firstname')) {
                                 $lastn = $get('lastname');

@@ -316,7 +316,12 @@
                                     conditions</a>.</label>
                         </div>
                         <button type="submit"
-                            class="w-full rounded-lg rounded bg-orange-600 p-2 text-center text-sm font-bold text-white shadow-lg transition duration-200 hover:bg-orange-700 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-orange-300 sm:w-auto">Enregistrer</button>
+                            class="w-full rounded-lg rounded bg-orange-600 p-2 text-center text-sm font-bold text-white shadow-lg transition duration-200 hover:bg-orange-700 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-orange-300 sm:w-auto">Enregistrer
+                        </button>
+                        <button type="reset"
+                            class="w-full rounded-lg rounded bg-red-800 p-2 text-center text-sm font-bold text-white shadow-lg transition duration-200 hover:bg-orange-700 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-orange-300 sm:w-auto">Annuler
+                        </button>
+                        
                     </form>
                 </div>
             </div>

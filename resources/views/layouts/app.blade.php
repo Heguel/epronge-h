@@ -12,6 +12,10 @@
     </title>
 
     {{-- <link href="{{ asset('assets/plugins/bootstrap/bootstrap.min.css') }}" rel="stylesheet"> --}}
+    {{-- start cdn links --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {{-- end cdn links --}}
     <link href="{{ asset('assets/plugins/jquery-3.5.1/jquery-ui.css') }}" rel="stylesheet" />
     <script src="{{ asset('assets/plugins/jquery-3.5.1/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/jquery-3.5.1/jquery-1.12.4.js') }}"></script>
@@ -89,7 +93,7 @@
             <div class="container mx-auto flex flex-col flex-wrap py-4 px-5 sm:flex-row">
                 <p class="text-center text-sm text-gray-500 sm:text-left">
                     ©{{ '2023' }}
-                    <a href="#" class="hover:underline">{{ 'Epronge-H' }}</a> - Tous droits reservés.
+                    <a href="#" class="hover:underline">{{ 'EPRONGE-H' }}</a> - Tous droits reservés.
                 </p>
 
                 <span class="mt-2 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
@@ -107,6 +111,10 @@
                         href="https://t.me/EPRONGE_H_LIMBE">
                         <i class="fa-brands fa-telegram"></i>
                     </a>
+                    <a class="ml-3 text-xl text-gray-500 transition duration-300 ease-in-out hover:text-red-500"
+                        href="mailto:eprongelimbe@gmail.com">
+                        <i class="fa fa-envelope"></i>
+                    </a>
                 </span>
             </div>
             <hr>
@@ -119,6 +127,39 @@
 
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/datepicker.js"></script>
+    
+    {{-- cdn links --}}
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.js" integrity="sha512-g2XTF9Pk2D5WvTurDRoO6VJ6c3Kk0c52wHzwwNwfYmQ0hIZrZwrAxWf+h2AsFkmiCCJKIJVPG5AOh6XwjBi91w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js" integrity="sha512-oN+ESyc7pGGR1b1ZpfFeh9uVtDZPjcd12t3lxnANlYrXKa8BwyLbmRzQN4z2BetWxAj9kgUyd7bq2jtb1psH5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker-en-CA.min.js" integrity="sha512-XyW6VyuUyLXiWM3BtbdTto6mXYFO9P1J3qO2GY1toAld5aLXhkNkLBQXqQoZm8Je86cCdDZn7ZG9ZQPbIWN60g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    const colors = require("tailwindcss/colors");
+    tailwind.config = {
+      theme: {
+        extend: {
+            colors: {
+                danger: colors.rose,
+                primary: colors.blue,
+                success: colors.green,
+                warning: colors.yellow,
+            },
+        },
+    },
+    plugins: [
+        require("flowbite/plugin"),
+        // require("tailwindcss/forms"),
+        // require("tailwindcss/typography"),
+    ],
+    }
+  </script>
+    {{-- cdn links --}}
+    
+    
     @yield('scripts')
     @stack('scripts')
     @livewireScripts
