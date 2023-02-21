@@ -2,17 +2,21 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
-use App\Models\User;
 use Filament\Forms;
-use Filament\Resources\Form;
-use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use App\Models\User;
 use Filament\Tables;
+use Filament\Resources\Form;
+use Filament\Resources\Table;
+use Filament\Resources\Resource;
+use Tables\Actions\DeleteAction;
+use Filament\Forms\Components\Card;
+use Illuminate\Support\Facades\Hash;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\UserResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\UserResource\RelationManagers;
 
 class UserResource extends Resource
 {
@@ -28,6 +32,23 @@ class UserResource extends Resource
         return $form
             ->schema([
                 //
+                Card::make()->schema([
+                    
+                    TextInput::make('name')
+                    ->label("Nom complet")
+                        ->required()
+                        ->reactive(),
+                        // ->afterStateUpdated(function (callable $get, callable $set) {
+                        //     if ($get('name')) {
+                        //         $full_name = $get('name');  
+                        //     }
+                        // }),
+                    TextInput::make('email')->email()
+                        ->label("Email")->required(),
+                    TextInput::make('password')
+                        ->dehydrateStateUsing(fn ($state)=>Hash::make($state))
+                        ->label("Password")->required()
+                ])
             ]);
     }
 
@@ -44,7 +65,8 @@ class UserResource extends Resource
                 //
             ])
             ->actions([
-                // Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 // Tables\Actions\DeleteBulkAction::make(),
@@ -62,7 +84,7 @@ class UserResource extends Resource
     {
         return [
             'index' => Pages\ListUsers::route('/'),
-            // 'create' => Pages\CreateUser::route('/create'),
+            'create' => Pages\CreateUser::route('/create'),
             // 'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
     }

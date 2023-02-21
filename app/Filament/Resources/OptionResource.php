@@ -36,7 +36,9 @@ class OptionResource extends Resource
             ->schema([
                 //
                 Card::make()->schema([
-                    TextInput::make('name')->required(),
+                    TextInput::make('name')->required()
+                        ->minLength(5)
+                        ->maxLength(50),
                     TextInput::make('description')->nullable(),
                     // Toggle::make('active')
                     //     ->required()

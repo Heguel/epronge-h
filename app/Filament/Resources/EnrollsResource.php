@@ -38,12 +38,16 @@ class EnrollsResource extends Resource
             ->schema([
                 //
                 Card::make()->schema([
-                    // TextInput::make('code')->required()->placeholder('AB-000000')
-                    // ->disabled(true),
-                    TextInput::make('lastname')->required(),
+                    
+                    TextInput::make('lastname')->required()->label("Nom")
+                        ->minLength(3)
+                        ->maxLength(25),
                     TextInput::make('firstname')
+                    ->label("Prenom")
                         ->required()
                         ->reactive()
+                        ->minLength(3)
+                        ->maxLength(25)
                         ->afterStateUpdated(function (callable $get, callable $set) {
                             if ($get('lastname') && $get('firstname')) {
                                 $lastn = $get('lastname');
@@ -53,21 +57,26 @@ class EnrollsResource extends Resource
                                 $set('code', null);
                             }
                         }),
-                    TextInput::make('email')->email()->required(),
-                    Select::make('gender')
+                    TextInput::make('email')->email(),
+                    Select::make('genre')
                         ->options([
                             'Male' => 'Masculin',
                             'Female' => 'Feminin',
                             'Other' => 'Autre',
                         ])
+                        ->label("Sexe")->required()
                         ->searchable(),
                     TextInput::make('phone')->tel()
                         ->telRegex('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/')
-                        ->required(),
-                    Select::make('option_id')
+                        ->required()
+                        ->label("Telephone"),
+                    Select::make('option_id')->required()
                         ->relationship('option', 'name'),
+
                     DatePicker::make('date_of_birth')
-                    ->maxDate(now()->subYears(12))
+                    ->maxDate(now())
+                    ->subYears(12)
+                    ->label("Date de naissance")
                     ->required(),
                 ])
             ]);

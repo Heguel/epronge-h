@@ -76,15 +76,15 @@ class NewEnrollController extends Controller
         // Save the enroll in the database
         if ($validatedData) {
             $newEnr = Enroll::create($validatedData);
-            Alert::success('event-success-create-enroll', 'Inscription reussie!<br/> Veuillez conservez votre code pour valider votre inscription au secrétariat:<br/><br/> Code: ' . $newEnr->code);
+            Alert::success('event-success-create-enroll', 'Inscription reussie!<br/> Veuillez conservez votre code pour valider votre inscription à l\'administration:<br/><br/> Code: ' . $newEnr->code);
             event('event-success-create-enroll', $newEnr);
 
             return redirect()->route('newEnroll.form')->with([
                 'success' => 'Inscription reussie!',
-                'info' => 'Veuillez conservez votre code pour valider votre inscription au secrétariat:\n Code: ' . $newEnr->code,
+                'info' => 'Veuillez conservez votre code pour valider votre inscription à l\'administration:\n Code: ' . $newEnr->code,
             ]);
         } else {
-            return redirect()->route('newEnroll.form')->with('error', 'Quelque chose s\'est mal passe!');
+            return redirect()->route('newEnroll.form')->with('error', 'Quelque chose s\'est mal passé!');
         }
     }
 
