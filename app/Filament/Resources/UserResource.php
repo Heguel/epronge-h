@@ -5,15 +5,21 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use App\Models\User;
 use Filament\Tables;
+use Filament\Pages\Page;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
 use Tables\Actions\DeleteAction;
 use Filament\Forms\Components\Card;
 use Illuminate\Support\Facades\Hash;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Resources\Pages\CreateRecord;
+use Filament\Forms\Components\CheckboxList;
 use App\Filament\Resources\UserResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\UserResource\RelationManagers;
@@ -33,21 +39,33 @@ class UserResource extends Resource
             ->schema([
                 //
                 Card::make()->schema([
-                    
+
                     TextInput::make('name')
-                    ->label("Nom complet")
+                        ->label("Nom complet")
                         ->required()
                         ->reactive(),
-                        // ->afterStateUpdated(function (callable $get, callable $set) {
-                        //     if ($get('name')) {
-                        //         $full_name = $get('name');  
-                        //     }
-                        // }),
                     TextInput::make('email')->email()
                         ->label("Email")->required(),
+
+                    // =================================================
+
                     TextInput::make('password')
-                        ->dehydrateStateUsing(fn ($state)=>Hash::make($state))
-                        ->label("Password")->required()
+                        ->password()
+                        ->required(fn (Page $livewire): bool => $livewire instanceof CreateRecord)
+                        ->minLength(8)
+                        ->same('passwordConfirmation')
+                        ->dehydrated(fn ($state) => filled($state))
+                        ->dehydrateStateUsing(fn ($state) => Hash::make($state)),
+                    TextInput::make('passwordConfirmation')
+                        ->password()
+                        ->label("Password confirmation")
+                        ->required(fn (Page $livewire): bool => $livewire instanceof CreateRecord)
+                        ->minLength(8)
+                        ->dehydrated(false),
+                    // added
+                    Section::make('Roles')->schema([
+                        CheckboxList::make('roles')->relationship('roles', 'name'),
+                    ]),
                 ])
             ]);
     }
@@ -60,23 +78,25 @@ class UserResource extends Resource
                 TextColumn::make('id'),
                 TextColumn::make('name'),
                 TextColumn::make('email'),
+                TextColumn::make('roles.name'),
             ])
+
             ->filters([
-                //
+                SelectFilter::make('Option')->relationship('roles', 'name'),
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                // Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
     public static function getRelations(): array
     {
         return [
-            //
         ];
     }
 

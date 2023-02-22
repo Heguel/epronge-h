@@ -10,15 +10,17 @@ use Filament\Resources\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Toggle;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\OptionResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\OptionResource\RelationManagers;
-use Filament\Tables\Columns\BadgeColumn;
-use Filament\Tables\Columns\IconColumn;
+use App\Filament\Resources\OptionResource\RelationManagers\EnrollsRelationManager;
 
 class OptionResource extends Resource
 {
@@ -29,6 +31,12 @@ class OptionResource extends Resource
 
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['name', 'description'];
+    }
+
 
     public static function form(Form $form): Form
     {
@@ -85,7 +93,7 @@ class OptionResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            EnrollsRelationManager::class,
         ];
     }
 

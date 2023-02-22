@@ -31,6 +31,18 @@ class EnrollsResource extends Resource
     protected static ?string $navigationIcon = 'bi-list-check';
     protected static ?string $recordTitleAttribute = 'code';
 
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['lastname', 'firstname', 'option.name'];
+    }
+
+    public static function getGlobalSearchResultDetails(Model $record): array
+    {
+        return [
+            'Option' => $record->option->name,
+            // 'Category' => $record->category->name,
+        ];
+    }
 
     public static function form(Form $form): Form
     {
@@ -38,12 +50,12 @@ class EnrollsResource extends Resource
             ->schema([
                 //
                 Card::make()->schema([
-                    
+
                     TextInput::make('lastname')->required()->label("Nom")
                         ->minLength(3)
                         ->maxLength(25),
                     TextInput::make('firstname')
-                    ->label("Prenom")
+                        ->label("Prenom")
                         ->required()
                         ->reactive()
                         ->minLength(3)
@@ -74,10 +86,9 @@ class EnrollsResource extends Resource
                         ->relationship('option', 'name'),
 
                     DatePicker::make('date_of_birth')
-                    ->maxDate(now())
-                    ->subYears(12)
-                    ->label("Date de naissance")
-                    ->required(),
+                        ->maxDate(now())
+                        ->label("Date de naissance")
+                        ->required(),
                 ])
             ]);
     }

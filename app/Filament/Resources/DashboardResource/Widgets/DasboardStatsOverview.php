@@ -28,7 +28,7 @@ class DasboardStatsOverview extends BaseWidget
                 // ->descriptionIcon('heroicon-s-trending-down')
                 // ->color('danger')
                 ,
-                Card::make('Admin', $admins)
+                Card::make('Utilisateurs', $admins)
                 // ->description('3% increase')
                 // ->descriptionIcon('heroicon-s-trending-up')
                 // ->color('success')
