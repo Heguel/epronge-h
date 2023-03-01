@@ -21,7 +21,17 @@ class Enroll extends Model
         'phone',
         'email',
         'option_id',
-        'date_of_birth'
+        'date_of_birth',
+        'place_of_birth',
+        'address',
+        'nationality',
+        'study_level',
+        'last_school_enrolled',
+        'type_blood',
+        'full_name_person_in_charge',
+        'sexe_person_in_charge',
+        'telephone_person_in_charge',
+        'address_person_in_charge',
     ];
 
     /**
