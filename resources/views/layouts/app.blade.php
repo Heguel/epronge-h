@@ -15,6 +15,7 @@
     {{-- start cdn links --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
     {{-- end cdn links --}}
     <link href="{{ asset('assets/plugins/jquery-3.5.1/jquery-ui.css') }}" rel="stylesheet" />
     <script src="{{ asset('assets/plugins/jquery-3.5.1/jquery.min.js') }}"></script>
@@ -36,7 +37,7 @@
 <body class="">
 
 
-    <nav class="rounded border-gray-200 bg-white px-2 py-2.5 dark:bg-gray-900 sm:px-4">
+    <nav class="bg-white px-2 py-2.5 dark:bg-gray-900 sm:px-4">
         <div class="container mx-auto flex flex-wrap items-center justify-between">
             <a href="{{ url('') }}" class="flex items-center">
                 <img src="{{ asset('assets/brand/logo_epronge.jpg') }}" class="mr-3 h-6 sm:h-9" alt="Epronge Logo" />
@@ -86,7 +87,7 @@
 
 
     <footer
-        class="flex items-center justify-between rounded-lg bg-white p-4 shadow transition-transform duration-300 ease-in-out dark:bg-gray-900 sm:flex-col sm:justify-evenly md:px-6 md:py-8">
+        class="flex items-center justify-between bg-white p-4 shadow transition-transform duration-300 ease-in-out dark:bg-gray-900 sm:flex-col sm:justify-evenly md:px-6 md:py-8">
 
 
         <div class="w-full">

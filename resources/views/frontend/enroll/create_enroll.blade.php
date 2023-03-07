@@ -123,18 +123,18 @@
 
     <div class="relative flex min-h-screen rounded-lg">
         <div
-            class="min-w-0 flex-auto flex-col items-center bg-white sm:flex sm:flex-row sm:justify-center md:items-start md:justify-start">
-            <div class="relative hidden h-full flex-auto items-center justify-center overflow-hidden bg-orange-900 bg-cover bg-no-repeat p-10 text-white sm:w-2/4 md:flex xl:w-2/4"
+            class="flex flex-auto items-center bg-white sm:flex sm:flex-row sm:justify-center md:items-start md:justify-start">
+            <div class="relative hidden h-full flex-auto items-center justify-center overflow-hidden bg-orange-900 bg-cover bg-no-repeat p-4 text-white sm:w-2/4 md:flex xl:w-2/4 2xl:w-2/4"
                 style="background-image: url(https://images.unsplash.com/photo-1579451861283-a2239070aaa9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
-                <div class="absolute inset-0 z-0 bg-gradient-to-b from-orange-600 to-orange-500 opacity-75"></div>
+                <div class="absolute inset-0 z-0 bg-gradient-to-b from-orange-600 to-blue-900 opacity-75"></div>
                 <div class="z-10 w-full max-w-md">
-                    <img src="{{ asset('assets/brand/logo_epronge.jpg') }}" alt="Epronge logo" /> <br />
-                    <div class="mb-6 font-bold leading-tight sm:text-4xl xl:text-5xl">À EPRONGE-H,
+                    <img src="{{ asset('assets/brand/logo_EprongeH.png') }}" alt="Epronge logo" /> <br />
+                    <div class="mb-6 font-bold leading-tight sm:text-2xl xl:text-5xl text-white">À EPRONGE-H,
                     </div>
-                    <div class="xl:text-md font-normal text-gray-200 sm:text-sm">Nous bâtissons l’avenir des jeunes en
+                    <div class="xl:text-md font-normal text-white sm:text-sm">Nous bâtissons l’avenir des jeunes en
                         investissant dans leur formation
                         professionnelle et du professionnalisme car, nous ne trahirons pas notre devise. <br /> <br />
-                        <span class="font-bold">Mieux former pour être utile ! <span>
+                        <span class="flex justify-center items-center font-bold">"Mieux former pour être utile!" <span>
                     </div>
                 </div>
                 <!---remove custom style-->
@@ -152,13 +152,13 @@
                 </ul>
             </div>
             <div
-                class="w-full bg-white p-8 sm:w-auto sm:rounded-lg md:flex md:h-full md:items-center md:justify-center md:rounded-none md:p-10 lg:w-2/4 lg:p-14 xl:w-2/4">
-                <div class="w-full space-y-8 lg:max-w-lg">
+                class="bg-white p-4 sm:w-auto sm:rounded-lg md:flex md:h-full md:items-center md:justify-center md:rounded-none md:p-8 lg:w-3/4 lg:p-8 xl:w-3/4 2xl:w-3/4">
+                <div class="w-full space-y-8 lg:max-w-auto xl:max-w-auto 2xl:w-full sm:w-auto">
                     <div class="text-center">
                         <h2 class="mt-6 text-5xl font-bold text-orange-500">
                             Bienvenue!
                         </h2>
-                        <p class="mt-2 text-sm text-gray-500">
+                        <p class="mt-2 text-sm text-black">
                             Veuillez remplir ce formulaire pour éffectuer une réservation!
                         </p>
                     </div>
@@ -185,13 +185,13 @@
                             </div>
                         @endif --}}
 
-                        <div class="mb-4 grid gap-4 md:grid-cols-3">
+                        <div class="mb-2 grid gap-4 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 sm:grid-cols-2">
                             {{-- start first name --}}
                             <div>
                                 <label for="first_name"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Prénom</label>
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">Prénom</label>
                                 <input type="text" id="first_name" name="firstname"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="Prénom" required>
                                 @error('firstname')
                                     <small class="text-red-400">Veuillez entrer votre prénom </small>
@@ -202,10 +202,10 @@
                             {{-- start last name --}}
                             <div>
                                 <label for="last_name"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Nom de
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">Nom de
                                     famille</label>
                                 <input type="text" id="last_name" name="lastname"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="Nom de famille" required>
                                 @error('lastname')
                                     <small class="text-red-400">Veuillez entrer votre nom de famille </small>
@@ -218,9 +218,9 @@
 
                             <div>
                                 <label for="email"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">Email</label>
                                 <input type="email" id="email" name="email"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="example@gmail.com">
                                 @error('email')
                                     <small class="text-red-400">Veuillez entrer votre email </small>
@@ -231,10 +231,10 @@
                             {{-- start phone --}}
                             <div>
                                 <label for="phone"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Numéro de
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">Numéro de
                                     téléphone</label>
                                 <input type="tel" id="phone" name="phone"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="Entrez votre numéro" pattern="[0-9]{4}[0-9]{4}" required>
                                 @error('phone')
                                     <small class="text-red-400">Veuillez entrer votre numéro de téléphone </small>
@@ -244,11 +244,11 @@
 
                             {{-- start sexe --}}
                             <div>
-                                <label for="gender" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                <label for="gender" class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">
                                     Sexe
                                 </label>
                                 <select id="gender" name="gender"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     required>
                                     <option value="">Choisir votre sexe</option>
                                     <option value="Female">Masculin</option>
@@ -263,11 +263,11 @@
 
                             {{-- start option --}}
                             <div>
-                                <label for="option" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                <label for="option" class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">
                                     Option
                                 </label>
                                 <select id="option" name="option_id"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     required>
                                     <option value="">Choisir une option</option>
                                     @forelse ($options as $option)
@@ -285,12 +285,12 @@
                             {{-- start date_of_birth --}}
                             <div>
                                 <label for="birthdayBefore12Years"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">
                                     Date de naissance
                                 </label>
 
                                 <input type="date" id="birthdayBefore12Years" name="date_of_birth"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="Chosissez une date" required>
                                 @error('date_of_birth')
                                     <small class="text-red-400">Veuillez entrer votre date de naissance </small>
@@ -301,11 +301,11 @@
                             {{-- start place of birth --}}
                             <div>
                                 <label for="place_of_birth"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">
                                     Lieu de naissance
                                 </label>
                                 <select id="place_of_birth" name="place_of_birth"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500">
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500">
                                     <option value="">Choisir votre lieu de naissance</option>
                                     @forelse ($place_of_births as $key=>$place_of_birth)
                                         <option value="{{ $key }}"> {{ $place_of_birth }}</option>
@@ -322,10 +322,10 @@
                             {{-- start address --}}
                             <div>
                                 <label for="address"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Adresse
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">Adresse
                                 </label>
                                 <input type="text" id="address" name="address"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="Entrez votre adresse">
                                 @error('address')
                                     <small class="text-red-400">Veuillez entrer votre adresse </small>
@@ -336,10 +336,10 @@
                             {{-- start nationality --}}
                             <div>
                                 <label for="nationality"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Nationalité
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">Nationalité
                                 </label>
                                 <input type="text" id="nationality" name="nationality"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="Votre nationalité">
                                 @error('nationality')
                                     <small class="text-red-400">Veuillez entrer votre nationalité </small>
@@ -350,10 +350,10 @@
                             {{-- start study_level --}}
                             <div>
                                 <label for="study_level"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Niveau d'étude
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">Niveau d'étude
                                 </label>
                                 <input type="text" id="study_level" name="study_level"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="Votre niveau d'étude">
                                 @error('study_level')
                                     <small class="text-red-400">Veuillez entrer votre niveau d'étude </small>
@@ -364,13 +364,13 @@
                             {{-- start last_school_enrolled --}}
                             <div>
                                 <label for="last_school_enrolled"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Dernière école fréquenté
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">Dernière établissemnt fréquenté
                                 </label>
                                 <input type="text" id="last_school_enrolled" name="last_school_enrolled"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                    placeholder="Nom du dernière école">
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    placeholder="Nom du dernière établissemnt">
                                 @error('last_school_enrolled')
-                                    <small class="text-red-400">Entrer le nom du dernière école fréquenté  </small>
+                                    <small class="text-red-400">Entrer le nom du dernière établissemnt fréquenté  </small>
                                 @enderror
                             </div>
                             {{-- end last_school_enrolled --}}
@@ -378,11 +378,11 @@
                              {{-- start type_blood --}}
                              <div>
                                 <label for="type_blood"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">
                                     Groupe sanguin
                                 </label>
                                 <select id="type_blood" name="type_blood"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     >
                                     <option value="">Groupe sanguin</option>
                                     @forelse ($type_bloods as $key=>$type_blood)
@@ -400,10 +400,10 @@
                             {{-- start full_name_person_in_charge --}}
                             <div>
                                 <label for="full_name_person_in_charge"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Personne responsable
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">Personne responsable
                                 </label>
                                 <input type="text" id="full_name_person_in_charge" name="full_name_person_in_charge"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="Personne responsable">
                                 @error('full_name_person_in_charge')
                                     <small class="text-red-400">Entrer le nom complet du personne responsable  </small>
@@ -413,11 +413,11 @@
 
                              {{-- start sexe_person_in_charge --}}
                              <div>
-                                <label for="sexe_person_in_charge" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                <label for="sexe_person_in_charge" class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">
                                     Sexe
                                 </label>
                                 <select id="sexe_person_in_charge" name="sexe_person_in_charge"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     >
                                     <option value="">Choisir un sexe</option>
                                     <option value="Female">Masculin</option>
@@ -433,10 +433,10 @@
                             {{-- start telephone_person_in_charge --}}
                              <div>
                                 <label for="telephone_person_in_charge"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Numéro de
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">Numéro de
                                     téléphone</label>
                                 <input type="tel" id="telephone_person_in_charge" name="telephone_person_in_charge"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="Entrez son téléphone" pattern="[0-9]{4}[0-9]{4}">
                                 @error('telephone_person_in_charge')
                                     <small class="text-red-400">Veuillez entrer le numéro de téléphone </small>
@@ -447,10 +447,10 @@
                             {{-- start address_person_in_charge --}}
                             <div>
                                 <label for="address_person_in_charge"
-                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Adresse
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-black">Adresse
                                 </label>
                                 <input type="text" id="address_person_in_charge" name="address_person_in_charge"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                     placeholder="Entrez son adresse">
                                 @error('address_person_in_charge')
                                     <small class="text-red-400">Veuillez entrer son adresse </small>
@@ -460,7 +460,7 @@
 
                         </div>
 
-
+                        <br />
                         <div class="mb-6 flex items-start">
                             <div class="flex h-5 items-center">
                                 <input id="remember" type="checkbox" value=""
@@ -473,10 +473,10 @@
                                     conditions</a>.</label>
                         </div>
                         <button type="submit"
-                            class="w-full rounded-lg rounded bg-orange-600 p-2 text-center text-sm font-bold text-white shadow-lg transition duration-200 hover:bg-orange-700 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-orange-300 sm:w-auto">Enregistrer
+                            class="mb-5 w-full rounded-lg rounded bg-orange-600 p-2 text-center text-sm font-bold text-white shadow-lg transition duration-200 hover:bg-orange-700 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-orange-300 sm:w-auto">Enregistrer
                         </button>
                         <button type="reset"
-                            class="w-full rounded-lg rounded bg-red-800 p-2 text-center text-sm font-bold text-white shadow-lg transition duration-200 hover:bg-orange-700 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-orange-300 sm:w-auto">Annuler
+                            class="w-full rounded-lg rounded bg-red-800 p-2 text-center text-sm font-bold text-white shadow-lg transition duration-200 hover:bg-orange-700 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-orange-300 sm:w-auto sm:ml-20">Annuler
                         </button>
 
                     </form>
